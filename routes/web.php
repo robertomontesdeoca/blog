@@ -31,7 +31,7 @@ Route::controller(CursoContoller::class)->group(function(){
     Route::get('cursos','index');
     Route::get('cursos/create','create');
     Route::get('cursos/{curso}','show'); 
-})
+});
 /* Route::get('cursos/{curso}/{categoria?}', function ($curso,$categoria=null) {
    
    //El siguiente codigo deberia desarrollarse en un contralador
