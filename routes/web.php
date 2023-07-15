@@ -21,18 +21,19 @@ use App\Http\Controllers\CursoContoller;
 //En el siguiente codigo se utiliza el controlador en las rutas 
 Route::get('/',HomeContoller::class);
 
-Route::get('cursos',[CursoContoller::class,'index']);
+Route::get('cursos',[CursoContoller::class,'index'])->name('cursos.index');
 
-Route::get('cursos/create', [CursoContoller::class,'create']);
+Route::get('cursos/create', [CursoContoller::class,'create'])->name('cursos.create');
 
-Route::get('cursos/{curso}',[CursoContoller::class,'show']);
+Route::get('cursos/{id}',[CursoContoller::class,'show'])->name('cursos.show');
 
+/*
 Route::controller(CursoContoller::class)->group(function(){
     Route::get('cursos','index');
     Route::get('cursos/create','create');
     Route::get('cursos/{curso}','show'); 
 });
-/* Route::get('cursos/{curso}/{categoria?}', function ($curso,$categoria=null) {
+ Route::get('cursos/{curso}/{categoria?}', function ($curso,$categoria=null) {
    
    //El siguiente codigo deberia desarrollarse en un contralador
     if($categoria){
