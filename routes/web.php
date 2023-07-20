@@ -25,8 +25,15 @@ Route::get('cursos',[CursoContoller::class,'index'])->name('cursos.index');
 
 Route::get('cursos/create', [CursoContoller::class,'create'])->name('cursos.create');
 
-Route::get('cursos/{id}',[CursoContoller::class,'show'])->name('cursos.show');
+Route::post('cursos',[CursoContoller::class,'store'])->name('cursos.store');
 
+Route::get('cursos/{curso}',[CursoContoller::class,'show'])->name('cursos.show');
+
+Route::get('cursos/{curso}/edit',[CursoContoller::class,'edit'])->name('cursos.edit');
+
+route::put('cursos/{curso}',[CursoContoller::class,'update'])->name('cursos.update');
+
+route::delete('cursos/{curso}',[CursoContoller::class,'destroy'])->name('cursos.destroy');
 /*
 Route::controller(CursoContoller::class)->group(function(){
     Route::get('cursos','index');
