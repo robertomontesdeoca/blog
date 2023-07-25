@@ -49,6 +49,7 @@ class CursoContoller extends Controller
         
         $request->validate([
             'name'=>'required',
+           // 'slug'=>'required',
             'descripcion'=>'required',
             'categoria'=>'required'
 
