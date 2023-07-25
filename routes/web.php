@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeContoller;
 use App\Http\Controllers\CursoContoller;
+use Illuminate\Routing\RouteGroup;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,8 +21,8 @@ use App\Http\Controllers\CursoContoller;
 }); */
 
 //En el siguiente codigo se utiliza el controlador en las rutas 
-Route::get('/',HomeContoller::class);
 
+/*
 Route::get('cursos',[CursoContoller::class,'index'])->name('cursos.index');
 
 Route::get('cursos/create', [CursoContoller::class,'create'])->name('cursos.create');
@@ -34,7 +36,7 @@ Route::get('cursos/{curso}/edit',[CursoContoller::class,'edit'])->name('cursos.e
 route::put('cursos/{curso}',[CursoContoller::class,'update'])->name('cursos.update');
 
 route::delete('cursos/{curso}',[CursoContoller::class,'destroy'])->name('cursos.destroy');
-/*
+
 Route::controller(CursoContoller::class)->group(function(){
     Route::get('cursos','index');
     Route::get('cursos/create','create');
@@ -51,3 +53,7 @@ Route::controller(CursoContoller::class)->group(function(){
 });
 
  */
+//Creado grupos 
+Route::get('/',HomeContoller::class)->name('home');
+Route::resource('cursos',CursoContoller::class);
+Route::view('nosotros','nosotros')->name('nosotros');
